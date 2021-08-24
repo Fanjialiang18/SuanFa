@@ -1,5 +1,9 @@
 package day01;
 
+/**
+ * 删除排序链表中的重复元素 II
+ * 思路：遍历，然后删除
+ */
 public class LeetCode82 {
     public ListNode numeteDuplicates(ListNode head) {
         ListNode dummy = new ListNode(-1);
@@ -13,6 +17,7 @@ public class LeetCode82 {
                 num = q.val;
             }
             if(flag){
+                //删除后面所有相同的数
                 while(q!=null && q.val == num){
                     p.next = q.next;
                     q = p.next;
