@@ -8,7 +8,7 @@ import day01.ListNode;
  * 思路：两个距离K的指针，后指针移到末尾即可、
  * 前指针就是倒数第K个
  */
-public class LeetCode22 {
+public class Offer22 {
 
     public ListNode getKthFromEnd(ListNode head, int k) {
         ListNode p=head;

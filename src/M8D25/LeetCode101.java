@@ -27,6 +27,7 @@ public class LeetCode101 {
         else if(left.val!=right.val)
             return false;
         //此时数值相同,做递归
+        //对称即左子树的右孩子和右子树的左孩子相同
         boolean outside = judge(left.left, right.right);
         boolean inside = judge(left.right, right.left);
         return outside&&inside;
