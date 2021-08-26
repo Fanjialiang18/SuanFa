@@ -6,8 +6,6 @@ public class LeetCode102 {
     /**
      * 二叉树的层序遍历
      * 使用队列和LinkedList
-     * @param root
-     * @return
      */
     public List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> lists=new LinkedList<>();// LinkedList优化每次从头进行添加
