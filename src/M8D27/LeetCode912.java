@@ -1,7 +1,12 @@
-package day01;
+package M8D27;
 
+import java.util.Arrays;
 import java.util.Random;
 
+/**
+ * 排序数组
+ * 快排
+ */
 public class LeetCode912 {
     public int[] sortArray(int[] nums) {
         return quickSort(nums, 0, nums.length - 1);
@@ -17,16 +22,16 @@ public class LeetCode912 {
     public int partition(int[] arr, int left, int right) {
         // 设定基准值（pivot）
         int index=new Random().nextInt(right-left+1)+left;
-        int i=arr[left];
-        arr[left]=arr[index];
-        arr[index]=i;
         int temp=arr[left];
+        arr[left]=arr[index];
+        arr[index]=temp;
+        temp=arr[left];
         while(left<right){
-            while(left<right&&arr[right]>=temp){
+            while(left<right&&arr[right]>=arr[left]){
                 right--;
             }
             arr[left]=arr[right];
-            while(left<right&&arr[left]<=temp){
+            while(left<right&&arr[left]<=arr[left]){
                 left++;
             }
             arr[right]=arr[left];
