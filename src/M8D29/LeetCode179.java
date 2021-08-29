@@ -1,9 +1,14 @@
-package day01;
+package M8D29;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * 最大数
+ * 思路：
+ *  比较s1+s2和s2+s1的大小，重新排序即可
+ */
 public class LeetCode179 {
     public static void main(String[] args) {
         System.out.println(largestNumber(new int[]{3,30,34,5,9}));
