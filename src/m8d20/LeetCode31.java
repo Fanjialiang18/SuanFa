@@ -16,7 +16,7 @@ import java.util.Arrays;
  * 可以发现在这个算法中，我们得到的末尾数字一定是倒序排列的，
  * 于是我们只需要把它反转即可 最终，我们得到了4, 1, 3, 5这个数列
  * 完整的数列则是2, 6, 4, 1, 3, 5
- * @author 25322
+ * @author clearlove3
  */
 public class LeetCode31 {
     public static void main(String[] args) {

@@ -38,4 +38,44 @@ public class LeetCode912 {
         arr[left]=temp;
         return left;
     }
+
+    /**
+     * 堆排序 - 堆排序的思想借助于二叉堆中的最大堆得以实现。
+     * 首先，将待排序数列抽象为二叉树，并构造出最大堆；
+     * 然后，依次将最大元素（即根节点元素）
+     * 与待排序数列的最后一个元素交换（即二叉树最深层最右边的叶子结点元素）；
+     * 每次遍历，刷新最后一个元素的位置（自减1），
+     * 直至其与首元素相交，即完成排序。
+     *
+     * 时间复杂度：O(NlogN) 　　稳定性：不稳定
+     */
+    void heapSort(int[] nums) {
+        int size = nums.length;
+        for (int i = size/2-1; i >=0; i--) {
+            adjust(nums, size, i);
+        }
+        for (int i = size - 1; i >= 1; i--) {
+            int temp = nums[0];
+            nums[0] = nums[i];
+            nums[i] = temp;
+            adjust(nums, i, 0);
+        }
+    }
+    void adjust(int []nums, int len, int index) {
+        int l = 2 * index + 1;
+        int r = 2 * index + 2;
+        int maxIndex = index;
+        if (l<len&&nums[l]>nums[maxIndex]) {
+            maxIndex = l;
+        }
+        if (r<len&&nums[r]>nums[maxIndex]) {
+            maxIndex = r;
+        }
+        if (maxIndex != index) {
+            int temp = nums[maxIndex];
+            nums[maxIndex] = nums[index];
+            nums[index] = temp;
+            adjust(nums, len, maxIndex);
+        }
+    }
 }

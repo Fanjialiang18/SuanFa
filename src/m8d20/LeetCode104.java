@@ -11,7 +11,7 @@ import java.util.LinkedList;
  *  递归
  * 思路2：
  *  迭代，使用层序遍历
- * @author 25322
+ * @author clearlove3
  */
 public class LeetCode104 {
     public int maxDepth(TreeNode root) {

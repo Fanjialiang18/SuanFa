@@ -1,4 +1,4 @@
-package m8d29;
+package m8d30;
 
 import java.util.Arrays;
 import java.util.List;
@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
  * 最大数
  * 思路：
  *  比较s1+s2和s2+s1的大小，重新排序即可
+ * @author clearlove3
  */
 public class LeetCode179 {
     public static void main(String[] args) {

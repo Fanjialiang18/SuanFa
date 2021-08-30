@@ -3,7 +3,7 @@ package day01;
 import java.util.*;
 
 /**
- * @author 25322
+ * @author clearlove3
  */
 public class LeetCode1 {
     public static void main(String[] args) {

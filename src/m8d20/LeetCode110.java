@@ -4,7 +4,7 @@ import day01.TreeNode;
 
 /**
  * 平衡二叉树
- * @author 25322
+ * @author clearlove3
  */
 public class LeetCode110 {
     public boolean isBalanced(TreeNode root) {
