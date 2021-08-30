@@ -12,8 +12,9 @@ public class LeetCode35 {
     public int searchInsert(int[] nums, int target) {
         //第一种o(n)
         for(int i=0;i<nums.length;i++){
-            if(nums[i]>=target)
+            if(nums[i]>=target) {
                 return i;
+            }
         }
         return nums.length;
     }
@@ -22,12 +23,15 @@ public class LeetCode35 {
         int l=0,r=nums.length-1;
         while (l<=r){
             int mid=l+(r-l)/2;
-            if(nums[mid]>target)
+            if(nums[mid]>target) {
                 r=mid-1;
-            if(nums[mid]<target)
+            }
+            if(nums[mid]<target) {
                 l=mid+1;
-            if(nums[mid]==target)
+            }
+            if(nums[mid]==target) {
                 return mid;
+            }
         }
         //查不到则返回r+1，因为此时r为小与target的第一个数
         return r+1;

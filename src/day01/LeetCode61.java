@@ -6,8 +6,9 @@ public class LeetCode61 {
     public  static ListNode rotateRight(ListNode head, int k) {
         //数组记录链表节点
         //重新构造
-        if(k==0||head==null)
+        if(k==0||head==null) {
             return head;
+        }
         ListNode perr=new ListNode();
         ListNode[] nodelist=new ListNode[501];
         ListNode p=head;
@@ -18,8 +19,9 @@ public class LeetCode61 {
             i++;
         }
         k=k%i;
-        if(k==0)
+        if(k==0) {
             return head;
+        }
         nodelist[i-1].next=head;
         nodelist[i-k-1].next=null;
         perr.next=nodelist[i-k];

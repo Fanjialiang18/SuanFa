@@ -2,6 +2,9 @@ package day01;
 
 import java.util.*;
 
+/**
+ * @author 25322
+ */
 public class LeetCode1 {
     public static void main(String[] args) {
         System.out.println(Arrays.toString(twoSum(new int[]{2,7,11,15},9)));

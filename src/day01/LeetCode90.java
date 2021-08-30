@@ -10,10 +10,11 @@ public class LeetCode90 {
         Map<Integer,Integer> m=new HashMap<>();
         //首先获取各个元素的数目
         for (int num : nums) {
-            if (!m.containsKey(num))
+            if (!m.containsKey(num)) {
                 m.put(num, 1);
-            else
+            } else {
                 m.replace(num, (m.get(num) + 1));
+            }
         }
         List<List<Integer>> l=new ArrayList<>();
         l.add(new ArrayList<Integer>());

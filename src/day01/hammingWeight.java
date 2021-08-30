@@ -2,6 +2,9 @@ package day01;
 
 import java.util.Scanner;
 
+/**
+ * @author 25322
+ */
 public class hammingWeight {
     public static void main(String[] args) {
         int n=new Scanner(System.in).nextInt();
@@ -12,8 +15,9 @@ public class hammingWeight {
         char[] c=s.toCharArray();
         int num=0;
         for (char value : c) {
-            if (value == '1')
+            if (value == '1') {
                 num++;
+            }
         }
         return num;
     }

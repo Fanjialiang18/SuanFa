@@ -13,14 +13,15 @@ public class LeetCode20 {
         //思路是遍历各个字符，将其对应的右括号入栈，然后右括号逐次匹配，判断是否是有效的括号
         Stack<Character> characters=new Stack<>();
         for(char c:s.toCharArray()){
-            if(c=='(')
+            if(c=='(') {
                 characters.push(')');
-            else if(c=='[')
+            } else if(c=='[') {
                 characters.push(']');
-            else if(c=='{')
+            } else if(c=='{') {
                 characters.push('}');
-            else if(characters.isEmpty()||c!=characters.pop())
+            } else if(characters.isEmpty()||c!=characters.pop()) {
                 return false;
+            }
         }
         return characters.isEmpty();
     }

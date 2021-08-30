@@ -10,8 +10,9 @@ public class LeetCode102 {
     public List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> lists=new LinkedList<>();// LinkedList优化每次从头进行添加
         Queue<TreeNode> queue=new LinkedList<>();
-        if(root==null)
+        if(root==null) {
             return lists;
+        }
         queue.add(root);
         while(!queue.isEmpty()){
             List<Integer> list=new ArrayList<>();
@@ -22,10 +23,12 @@ public class LeetCode102 {
             }
             while (!queue.isEmpty()){//添加下一层的节点
                 TreeNode poll = queue.poll();
-                if(poll.left!=null)
+                if(poll.left!=null) {
                     queue.add(poll.left);
-                if(poll.right!=null)
+                }
+                if(poll.right!=null) {
                     queue.add(poll.right);
+                }
                 i--;
             }
             lists.add(list);

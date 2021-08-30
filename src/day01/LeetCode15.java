@@ -23,11 +23,13 @@ public class LeetCode15 {
      * @return
      */
     public static List<List<Integer>> threeSum(int[] nums) {
-        if (nums.length<3)
+        if (nums.length<3) {
             return new ArrayList<List<Integer>>();
+        }
         Arrays.sort(nums);
-        if(nums[0]>0)
+        if(nums[0]>0) {
             return new ArrayList<List<Integer>>();
+        }
         Map<Integer,Integer> map=new HashMap<>();
         Set<List<Integer>> set=new HashSet<>();
         int target=0;
@@ -51,11 +53,13 @@ public class LeetCode15 {
      * @return
      */
     public static List<List<Integer>> threeSum2(int[] nums){
-        if (nums.length<3)
+        if (nums.length<3) {
             return new ArrayList<List<Integer>>();
+        }
         Arrays.sort(nums);
-        if(nums[0]>0)
+        if(nums[0]>0) {
             return new ArrayList<List<Integer>>();
+        }
         List<List<Integer>> lists=new ArrayList<>();
         for (int i = 0; i < nums.length; i++) {
             if (i > 0 && nums[i] == nums[i - 1]) {
@@ -65,14 +69,20 @@ public class LeetCode15 {
             int right=nums.length-1;
             while (left<right){
                 int result=nums[i]+nums[left]+nums[right];
-                if(result>0)
+                if(result>0) {
                     right--;
-                if(result<0)
+                }
+                if(result<0) {
                     left++;
+                }
                 if(result==0) {
                     lists.add(Arrays.asList(nums[i], nums[left], nums[right]));
-                    while (right > left && nums[right] == nums[right - 1]) right--;
-                    while (right > left && nums[left] == nums[left + 1]) left++;
+                    while (right > left && nums[right] == nums[right - 1]) {
+                        right--;
+                    }
+                    while (right > left && nums[left] == nums[left + 1]) {
+                        left++;
+                    }
                     left++;
                     right--;
                 }

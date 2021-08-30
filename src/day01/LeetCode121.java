@@ -3,8 +3,6 @@ package day01;
 public class LeetCode121 {
     /**
      * 买卖股票的最佳时机
-     * @param prices
-     * @return
      */
     public int maxProfit(int[] prices) {
         int profit=0;

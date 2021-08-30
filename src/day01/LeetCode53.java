@@ -10,10 +10,11 @@ public class LeetCode53 {
         int max=nums[0];
         int sum=0;
         for (int i : nums) {
-            if (sum > 0)
+            if (sum > 0) {
                 sum+=i;
-            else
+            } else {
                 sum=i;
+            }
             max=Math.max(sum,max);
         }
         return max;

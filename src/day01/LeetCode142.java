@@ -6,12 +6,11 @@ public class LeetCode142 {
     /**
      * 环形链表2
      * 需要返回相交的点
-     * @param head
-     * @return
      */
     public ListNode detectCycle(ListNode head) {
-        if(head==null)
+        if(head==null) {
             return null;
+        }
         boolean hasCycle=false;
         ListNode fast=head;
         ListNode slow=head;

@@ -13,10 +13,11 @@ public class LeetCode153 {
         int l=0,r=nums.length-1;
         while (l<r){
             int mid=(r-l)/2+l;
-            if(nums[mid]<nums[r])
+            if(nums[mid]<nums[r]) {
                 r=mid;
-            else
+            } else {
                 l=mid+1;
+            }
         }
         return nums[l];
     }

@@ -9,12 +9,14 @@ public class LeetCode173 {
             bulid(root);
     }
     public void bulid(TreeNode root){
-        if(root.right!=null)
+        if(root.right!=null) {
             bulid(root.right);
+        }
         root.right=list;
         list=root;
-        if(root.left!=null)
+        if(root.left!=null) {
             bulid(root.left);
+        }
     }
     public int next() {
         int val= list.val;

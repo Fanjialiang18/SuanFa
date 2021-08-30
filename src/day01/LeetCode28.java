@@ -7,8 +7,9 @@ public class LeetCode28 {
     }
 
     public static int strStr(String haystack, String needle) {
-        if(needle==null||needle.length()==0)
+        if(needle==null||needle.length()==0) {
             return 0;
+        }
         int[] next=new int[needle.length()];
         int j=0,k=-1;
         next[0]=-1;
@@ -19,7 +20,9 @@ public class LeetCode28 {
                 j++;k++;
                 next[j] = k;
             }
-            else k = next[k];
+            else {
+                k = next[k];
+            }
         }
         int i=0;
         j=0;
@@ -30,11 +33,14 @@ public class LeetCode28 {
                 i++;
                 j++;
             }
-            else j=next[j];               //j回退。。。
+            else {
+                j=next[j];               //j回退。。。
+            }
         }
-        if(j>=needle.length())
+        if(j>=needle.length()) {
             return (i-needle.length());         //匹配成功，返回子串的位置
-        else
+        } else {
             return (-1);                  //没找到
+        }
     }
 }
