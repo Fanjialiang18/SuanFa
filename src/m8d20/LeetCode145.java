@@ -50,10 +50,12 @@ public class LeetCode145 {
                 stack.pop();
             }else{
                 if(curr.right != null) {
-                    stack.push(curr.right); //先将右结点压栈
+                    //先将右结点压栈
+                    stack.push(curr.right);
                 }
                 if(curr.left != null) {
-                    stack.push(curr.left);   //再将左结点入栈
+                    //再将左结点入栈
+                    stack.push(curr.left);
                 }
             }
         }

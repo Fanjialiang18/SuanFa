@@ -3,12 +3,16 @@ package m8d30;
 import java.util.Stack;
 
 /**
+ * 基本计算器2
+ * 思路：
+ *  使用一个数字栈，和一个用来保存上一个符号的变量即可
  * @author clearlove3
  */
 public class LeetCode227 {
     public int calculate(String s) {
         // 保存上一个符号，初始为 +
         char sign = '+';
+        //数字栈
         Stack<Integer> numStack = new Stack<>();
         // 保存当前数字，如：12是两个字符，需要进位累加
         int num = 0;

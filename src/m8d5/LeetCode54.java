@@ -6,14 +6,12 @@ import java.util.List;
 public class LeetCode54 {
 
     public static void main(String[] args) {
-        List<Integer> list = spiralOrder(new int[][]{{1,2,3}, {4,5,6}, {7,8,9}});
+        List<Integer> list = spiralOrder(new int[][]{{1,2,3,4}, {5,6,7,8}, {9,10,11,12}});
         System.out.println(list);
     }
     /**
      * 螺旋矩阵
-     * 思路：分为上下左右进行添加即可
-     * @param matrix
-     * @return
+     * 思路：分为上下左右进行添加即可，左闭右开
      */
     public static List<Integer> spiralOrder(int[][] matrix) {
         int cols=matrix[0].length,rows=matrix.length;
@@ -23,7 +21,6 @@ public class LeetCode54 {
         while (res.size()!=cols*rows){
             switch (direct){
                 case 1:
-//                    res.addAll(matrix[row]);
                     //横向从左到右
                     for(int i=times;i<cols-times;i++){
                         res.add(matrix[times][i]);
