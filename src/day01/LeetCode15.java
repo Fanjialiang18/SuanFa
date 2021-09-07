@@ -19,8 +19,6 @@ public class LeetCode15 {
 
     /**
      * 暴力求解法
-     * @param nums
-     * @return
      */
     public static List<List<Integer>> threeSum(int[] nums) {
         if (nums.length<3) {
@@ -49,8 +47,6 @@ public class LeetCode15 {
     /**
      * 双指针法，一开始通过set去重，效率低
      * 后来发现可以手动移动l和r来去重
-     * @param nums
-     * @return
      */
     public static List<List<Integer>> threeSum2(int[] nums){
         if (nums.length<3) {
