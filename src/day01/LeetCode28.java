@@ -1,5 +1,9 @@
 package day01;
 
+/**
+ * 实现strStr()
+ * @author clearlove3
+ */
 public class LeetCode28 {
 
     public static void main(String[] args) {
@@ -34,13 +38,16 @@ public class LeetCode28 {
                 j++;
             }
             else {
-                j=next[j];               //j回退。。。
+                //j回退。。。
+                j=next[j];
             }
         }
         if(j>=needle.length()) {
-            return (i-needle.length());         //匹配成功，返回子串的位置
+            //匹配成功，返回子串的位置
+            return (i-needle.length());
         } else {
-            return (-1);                  //没找到
+            //没找到
+            return (-1);
         }
     }
 }
