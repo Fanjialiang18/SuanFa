@@ -1,6 +1,8 @@
 package day01;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Random;
 
 public class SortSolutions {
 
@@ -114,8 +116,10 @@ public class SortSolutions {
 
     private static int partition(int[] arr, int left, int right) {
         // 设定基准值（pivot）
-        int random = (int)Math.random()*arr.length;
-        int temp;
+        int random = new Random().nextInt(right-left+1)+left;;
+        int temp=arr[left];
+        arr[left]=arr[random];
+        arr[random]=temp;
         int index = left + 1;
         for (int i = index; i <= right; i++) {
             if (arr[i] < arr[left]) {
