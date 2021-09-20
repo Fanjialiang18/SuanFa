@@ -3,7 +3,7 @@ package erchashu;
 import day01.TreeNode;
 
 /**
- * 堆成二叉树
+ * 对称二叉树
  * 递归
  * @author clearlove3
  */
