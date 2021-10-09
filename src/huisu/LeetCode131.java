@@ -21,7 +21,7 @@ public class LeetCode131 {
     private void backTracking(String s, int startIndex) {
         //如果起始位置大于s的大小，说明找到了一组分割方案
         if (startIndex >= s.length()) {
-            lists.add(new ArrayList(deque));
+            lists.add(new ArrayList<>(deque));
             return;
         }
         for (int i = startIndex; i < s.length(); i++) {
