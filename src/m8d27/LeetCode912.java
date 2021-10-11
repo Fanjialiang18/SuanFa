@@ -24,13 +24,14 @@ public class LeetCode912 {
         int temp=arr[left];
         arr[left]=arr[index];
         arr[index]=temp;
+        //基准
         temp=arr[left];
         while(left<right){
-            while(left<right&&arr[right]>=arr[left]){
+            while(left<right&&arr[right]>=temp){
                 right--;
             }
             arr[left]=arr[right];
-            while(left<right&&arr[left]<=arr[left]){
+            while(left<right&&arr[left]<=temp){
                 left++;
             }
             arr[right]=arr[left];
