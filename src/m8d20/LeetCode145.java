@@ -2,7 +2,9 @@ package m8d20;
 
 import day01.TreeNode;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Stack;
 
 /**
  * 二叉树的后序遍历
@@ -11,15 +13,16 @@ public class LeetCode145 {
     /**
      * 递归
      */
-    List<Integer> res=new ArrayList<>();
+    List<Integer> res = new ArrayList<>();
+
     public List<Integer> postorderTraversal2(TreeNode root) {
-        if(root==null) {
+        if (root == null) {
             return res;
         }
-        if(root.left!=null) {
+        if (root.left != null) {
             postorderTraversal2(root.left);
         }
-        if(root.right!=null) {
+        if (root.right != null) {
             postorderTraversal2(root.right);
         }
         res.add(root.val);
@@ -34,26 +37,26 @@ public class LeetCode145 {
      */
     public List<Integer> postorderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList<Integer>();
-        if(root == null) {
+        if (root == null) {
             return res;
         }
         Stack<TreeNode> stack = new Stack<TreeNode>();
         TreeNode pre = null;
         stack.push(root);
-        while(!stack.isEmpty()){
+        while (!stack.isEmpty()) {
             TreeNode curr = stack.peek();
-            if((curr.left == null && curr.right == null) ||
-                    (pre != null && (pre == curr.left || pre == curr.right))){
+            if ((curr.left == null && curr.right == null) ||
+                    (pre != null && (pre == curr.left || pre == curr.right))) {
                 //如果当前结点左右子节点为空或上一个访问的结点为当前结点的子节点时，当前结点出栈
                 res.add(curr.val);
                 pre = curr;
                 stack.pop();
-            }else{
-                if(curr.right != null) {
+            } else {
+                if (curr.right != null) {
                     //先将右结点压栈
                     stack.push(curr.right);
                 }
-                if(curr.left != null) {
+                if (curr.left != null) {
                     //再将左结点入栈
                     stack.push(curr.left);
                 }
@@ -66,22 +69,22 @@ public class LeetCode145 {
      * 前序为中左右
      * 将前序的调整为中右左后翻转即可为左右中
      */
-    public List<Integer> postorderTraversal1(TreeNode root){
-        List<Integer> result=new ArrayList<>();
-        if(root==null) {
+    public List<Integer> postorderTraversal1(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
+        if (root == null) {
             return result;
         }
-        Stack<TreeNode> stack=new Stack<>();
+        Stack<TreeNode> stack = new Stack<>();
         stack.push(root);
-        while (!stack.isEmpty()){
+        while (!stack.isEmpty()) {
             TreeNode pop = stack.pop();
-            if(pop.left!=null) {
+            if (pop.left != null) {
                 stack.push(pop.left);
             }
-            if(pop.right!=null) {
+            if (pop.right != null) {
                 stack.push(pop.right);
             }
-            result.add(0,pop.val);
+            result.add(0, pop.val);
         }
         return result;
     }

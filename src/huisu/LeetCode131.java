@@ -7,6 +7,7 @@ import java.util.List;
 
 /**
  * 分割回文串
+ *
  * @author clearlove3
  */
 public class LeetCode131 {
@@ -37,6 +38,7 @@ public class LeetCode131 {
             deque.removeLast();
         }
     }
+
     //判断是否是回文串
     private boolean isPalindrome(String s, int startIndex, int end) {
         for (int i = startIndex, j = end; i < j; i++, j--) {

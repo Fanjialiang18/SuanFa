@@ -4,18 +4,19 @@ import day01.ListNode;
 
 /**
  * 反转链表
+ *
  * @author clearlove3
  */
 public class LeetCode206 {
     public ListNode reverseList(ListNode head) {
-        ListNode pre=null;
+        ListNode pre = null;
         // ListNode n=head;
-        ListNode next=null;
-        while(head!=null){
-            next=head.next;
-            head.next=pre;
-            pre=head;
-            head=next;
+        ListNode next = null;
+        while (head != null) {
+            next = head.next;
+            head.next = pre;
+            pre = head;
+            head = next;
         }
         return pre;
     }

@@ -14,25 +14,25 @@ import java.util.Queue;
 public class LeetCode199 {
 
     public List<Integer> rightSideView(TreeNode root) {
-        Queue<TreeNode> queue=new LinkedList<>();
-        List<Integer> list=new ArrayList<>();
-        int val=0;
-        if(root==null) {
+        Queue<TreeNode> queue = new LinkedList<>();
+        List<Integer> list = new ArrayList<>();
+        int val = 0;
+        if (root == null) {
             return list;
         }
         queue.offer(root);
-        while (!queue.isEmpty()){
-            int num=queue.size();
-            while (num>0){
+        while (!queue.isEmpty()) {
+            int num = queue.size();
+            while (num > 0) {
                 TreeNode poll = queue.poll();
-                if(poll.left!=null) {
+                if (poll.left != null) {
                     queue.offer(poll.left);//add加元素时候满了会异常，offer会返回false
                 }
-                if(poll.right!=null) {
+                if (poll.right != null) {
                     queue.offer(poll.right);
                 }
                 num--;
-                val=poll.val;
+                val = poll.val;
             }
             list.add(val);
         }

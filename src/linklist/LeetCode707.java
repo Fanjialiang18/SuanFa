@@ -7,6 +7,7 @@ import day01.ListNode;
  * 设计链表
  * 简单单链表的设计
  * 注意使用了虚拟头节点
+ *
  * @author clearlove3
  */
 public class LeetCode707 {

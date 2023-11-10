@@ -6,10 +6,12 @@ import day01.TreeNode;
  * 把二叉搜索树转换为累加树
  * 累加的顺序是右中左
  * 需要反中序遍历这个二叉树，然后顺序累加就可以了
+ *
  * @author clearlove3
  */
 public class LeetCode538 {
     int sum;
+
     public TreeNode convertBST(TreeNode root) {
         sum = 0;
         convertBST1(root);

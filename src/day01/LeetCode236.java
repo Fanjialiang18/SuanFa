@@ -3,6 +3,7 @@ package day01;
 public class LeetCode236 {
     /**
      * 二叉树的最近公共祖先
+     *
      * @param root
      * @param p
      * @param q
@@ -18,22 +19,22 @@ public class LeetCode236 {
          2. 如果左右子树返回值只有一个不为null, 说明只有p和q存在与左或右子树中, 最先找到的那个节点为LCA
          3. 左右子树返回值均为null, p和q均不在树中, 返回null
          */
-        if(root==null) {
+        if (root == null) {
             return null;
         }
         //找到p或者q时候返回qp
-        if(root==p||root==q) {
+        if (root == p || root == q) {
             return root;
         }
-        TreeNode left=lowestCommonAncestor(root.left,p,q);
-        TreeNode right=lowestCommonAncestor(root.right,p,q);
-        if(left!=null&&right!=null) {
+        TreeNode left = lowestCommonAncestor(root.left, p, q);
+        TreeNode right = lowestCommonAncestor(root.right, p, q);
+        if (left != null && right != null) {
             return root;
         }
-        if(left!=null) {
+        if (left != null) {
             return left;
         }
-        if(right!=null) {
+        if (right != null) {
             return right;
         }
         return null;

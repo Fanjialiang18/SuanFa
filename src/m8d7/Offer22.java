@@ -11,13 +11,13 @@ import day01.ListNode;
 public class Offer22 {
 
     public ListNode getKthFromEnd(ListNode head, int k) {
-        ListNode p=head;
-        for(int i=0;i<k-1;i++){
-            p=p.next;
+        ListNode p = head;
+        for (int i = 0; i < k - 1; i++) {
+            p = p.next;
         }
-        while (p.next!=null){
-            p=p.next;
-            head=head.next;
+        while (p.next != null) {
+            p = p.next;
+            head = head.next;
         }
         return head;
     }

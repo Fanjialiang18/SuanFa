@@ -3,7 +3,8 @@ package shuzu;
 /**
  * 螺旋矩阵2
  * 思路：
- *  模拟，拐角处让给新的一条边来继续画，左闭右开
+ * 模拟，拐角处让给新的一条边来继续画，左闭右开
+ *
  * @author clearlove3
  */
 public class LeetCode59 {
@@ -30,12 +31,12 @@ public class LeetCode59 {
             int j = startY;
 
             // 模拟上侧从左到右
-            for (; j<startY + n -offset; ++j) {
+            for (; j < startY + n - offset; ++j) {
                 res[startX][j] = count++;
             }
 
             // 模拟右侧从上到下
-            for (; i<startX + n -offset; ++i) {
+            for (; i < startX + n - offset; ++i) {
                 res[i][j] = count++;
             }
 

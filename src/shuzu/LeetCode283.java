@@ -18,8 +18,8 @@ public class LeetCode283 {
             fast++;
         }
         //后面填充0
-        while (slow< nums.length){
-            nums[slow]=0;
+        while (slow < nums.length) {
+            nums[slow] = 0;
             slow++;
         }
     }

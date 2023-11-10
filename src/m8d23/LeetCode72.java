@@ -10,7 +10,7 @@ public class LeetCode72 {
         int[][] dp = new int[m + 1][n + 1];
         // 初始化
         for (int i = 1; i <= m; i++) {
-            dp[i][0] =  i;
+            dp[i][0] = i;
         }
         for (int j = 1; j <= n; j++) {
             dp[0][j] = j;

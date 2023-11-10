@@ -8,9 +8,9 @@ import java.util.Map;
 /**
  * 从前序与中序遍历序列构造二叉树
  * 说到一层一层切割，就应该想到了递归。
- *
+ * <p>
  * 来看一下一共分几步：
- *
+ * <p>
  * 第一步：如果数组大小为零的话，说明是空节点了。
  * 第二步：如果不为空，那么取后序数组最后一个元素作为节点元素。
  * 第三步：找到前序数组第一个元素在中序数组的位置，作为切割点
@@ -19,10 +19,11 @@ import java.util.Map;
  * 第六步：递归处理左区间和右区间
  */
 public class LeetCode105 {
-    Map<Integer,Integer> map=new HashMap<>();
+    Map<Integer, Integer> map = new HashMap<>();
+
     public TreeNode buildTree(int[] preorder, int[] inorder) {
-        for (int i=0;i<inorder.length;i++) {
-            map.put(inorder[i],i);
+        for (int i = 0; i < inorder.length; i++) {
+            map.put(inorder[i], i);
         }
         return helper(preorder, 0, preorder.length - 1, inorder, 0, inorder.length - 1);
     }
@@ -39,10 +40,10 @@ public class LeetCode105 {
 
         // val 为前序遍历第一个的值，也即是根节点的值
         // idx 为根据根节点的值来找中序遍历的下标
-        int idx , val = preorder[preLeft];
+        int idx, val = preorder[preLeft];
         TreeNode root = new TreeNode(val);
         //使用map来提高效率
-        idx=map.get(val);
+        idx = map.get(val);
 //        for (int i = inLeft; i <= inRight; i++) {
 //            if (inorder[i] == val) {
 //                idx = i;

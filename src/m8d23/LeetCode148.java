@@ -15,30 +15,30 @@ import day01.ListNode;
  */
 public class LeetCode148 {
     public ListNode sortList(ListNode head) {
-        return head==null?null:mergeSort(head);
+        return head == null ? null : mergeSort(head);
     }
 
-    private ListNode mergeSort(ListNode head){
-        if(head.next==null) {
+    private ListNode mergeSort(ListNode head) {
+        if (head.next == null) {
             return head;
         }
         //快慢指针将链表分为2部分,pre用来切割两个链表
-        ListNode slow=head,fast=head,pre=null;
-        while (fast!=null&&fast.next!=null){
-            pre=slow;
-            slow=slow.next;
-            fast=fast.next.next;
+        ListNode slow = head, fast = head, pre = null;
+        while (fast != null && fast.next != null) {
+            pre = slow;
+            slow = slow.next;
+            fast = fast.next.next;
         }
-        pre.next=null;
-        ListNode l=mergeSort(head);
-        ListNode r=mergeSort(slow);
-        return merge(l,r);
+        pre.next = null;
+        ListNode l = mergeSort(head);
+        ListNode r = mergeSort(slow);
+        return merge(l, r);
     }
 
     /**
      * 排序后合并
      */
-    private ListNode merge(ListNode l,ListNode r){
+    private ListNode merge(ListNode l, ListNode r) {
         ListNode dummyHead = new ListNode(0);
         ListNode cur = dummyHead;
         while (l != null && r != null) {

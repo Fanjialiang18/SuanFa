@@ -4,38 +4,39 @@ import java.util.*;
 
 /**
  * 前 K 个高频元素
+ *
  * @author clearlove3
  */
 public class LeetCode347 {
     public int[] topKFrequent(int[] nums, int k) {
-        Map<Integer,Integer> map=new HashMap<>(nums.length);
+        Map<Integer, Integer> map = new HashMap<>(nums.length);
         //统计频率
-        int[] res=new int[k];
+        int[] res = new int[k];
         for (int num : nums) {
-            map.put(num,map.getOrDefault(num,0)+1);
+            map.put(num, map.getOrDefault(num, 0) + 1);
         }
         //用一个优先队列维护前k个数据
         // 根据map的value值正序排，相当于一个小顶堆
         Set<Map.Entry<Integer, Integer>> entries = map.entrySet();
-        PriorityQueue<Map.Entry<Integer,Integer>> queue=new PriorityQueue<>(((o1, o2) -> o1.getValue()-o2.getValue()));
+        PriorityQueue<Map.Entry<Integer, Integer>> queue = new PriorityQueue<>(((o1, o2) -> o1.getValue() - o2.getValue()));
         for (Map.Entry<Integer, Integer> entry : entries) {
             queue.offer(entry);
-            if(queue.size()>k){
+            if (queue.size() > k) {
                 queue.poll();
             }
         }
-        for(int i=k-1;i>=0;i--){
-            res[i]=queue.poll().getKey();
+        for (int i = k - 1; i >= 0; i--) {
+            res[i] = queue.poll().getKey();
         }
         return res;
     }
 
     public int[] topKFrequent2(int[] nums, int k) {
-        Map<Integer,Integer> map=new HashMap<>(nums.length);
+        Map<Integer, Integer> map = new HashMap<>(nums.length);
         //统计频率
-        int[] res=new int[k];
+        int[] res = new int[k];
         for (int num : nums) {
-            map.put(num,map.getOrDefault(num,0)+1);
+            map.put(num, map.getOrDefault(num, 0) + 1);
         }
         List<int[]> values = new ArrayList<int[]>();
         for (Map.Entry<Integer, Integer> entry : map.entrySet()) {

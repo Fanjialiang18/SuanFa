@@ -5,9 +5,9 @@ package dp;
  */
 public class LeetCode63 {
     public int uniquePathsWithObstacles(int[][] obstacleGrid) {
-        int n=obstacleGrid.length;
-        int m=obstacleGrid[0].length;
-        int[][] dp=new int[n][m];
+        int n = obstacleGrid.length;
+        int m = obstacleGrid[0].length;
+        int[][] dp = new int[n][m];
         dp[0][0] = 1 - obstacleGrid[0][0];
         for (int i = 1; i < m; i++) {
             if (obstacleGrid[0][i] == 0 && dp[0][i - 1] == 1) {

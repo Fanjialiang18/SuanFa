@@ -7,6 +7,7 @@ import java.util.Map;
 /**
  * LFU实现
  * 纯copy
+ *
  * @author clearlove3
  */
 public class LeetCode460 {
@@ -94,7 +95,8 @@ public class LeetCode460 {
         int value;
         int freq = 1;
 
-        public Node() {}
+        public Node() {
+        }
 
         public Node(int key, int value) {
             this.key = key;

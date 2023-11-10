@@ -15,32 +15,33 @@ import java.util.Map;
  * 第六步：递归处理左区间和右区间
  */
 public class LeetCode106 {
-    Map<Integer,Integer> map=new HashMap<>();
+    Map<Integer, Integer> map = new HashMap<>();
+
     public TreeNode buildTree(int[] inorder, int[] postorder) {
         for (int i = 0; i < inorder.length; i++) {
-            map.put(inorder[i],i);
+            map.put(inorder[i], i);
         }
         //左闭右开
-        return helper(inorder,0,inorder.length,postorder,0,postorder.length);
+        return helper(inorder, 0, inorder.length, postorder, 0, postorder.length);
     }
 
-    private TreeNode helper(int[] inorder,int inorderLeft,int inorderRight,
-                            int[] postorder,int postorderLeft,int postorderRight){
+    private TreeNode helper(int[] inorder, int inorderLeft, int inorderRight,
+                            int[] postorder, int postorderLeft, int postorderRight) {
         // 递归终止条件
-        if(inorderRight-inorderLeft<1) {
+        if (inorderRight - inorderLeft < 1) {
             return null;
         }
         //只有一个元素
         if (inorderRight - inorderLeft == 1) {
             return new TreeNode(inorder[inorderLeft]);
         }
-        int val=postorder[postorderRight-1];
+        int val = postorder[postorderRight - 1];
         TreeNode root = new TreeNode(val);
-        int index=map.get(val);
-        root.left=helper(inorder,inorderLeft,index,
-                postorder,postorderLeft,postorderLeft+(index-inorderLeft));
-        root.right=helper(inorder,index+1,inorderRight,
-                postorder,postorderLeft+(index-inorderLeft),postorderRight-1);
+        int index = map.get(val);
+        root.left = helper(inorder, inorderLeft, index,
+                postorder, postorderLeft, postorderLeft + (index - inorderLeft));
+        root.right = helper(inorder, index + 1, inorderRight,
+                postorder, postorderLeft + (index - inorderLeft), postorderRight - 1);
         return root;
     }
 

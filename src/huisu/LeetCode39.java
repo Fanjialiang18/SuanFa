@@ -9,7 +9,8 @@ import java.util.List;
  */
 public class LeetCode39 {
     List<List<Integer>> res = new ArrayList<>();
-    List<Integer> path=new ArrayList<>();
+    List<Integer> path = new ArrayList<>();
+
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
         // 先进行排序
         Arrays.sort(candidates);
@@ -17,7 +18,7 @@ public class LeetCode39 {
         return res;
     }
 
-    public void backtracking( int[] candidates, int target, int sum, int idx) {
+    public void backtracking(int[] candidates, int target, int sum, int idx) {
         if (sum == target) {
             res.add(new ArrayList<>(path));
             return;

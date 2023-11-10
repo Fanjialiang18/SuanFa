@@ -5,6 +5,7 @@ import java.util.List;
 
 /**
  * 复原 IP 地址
+ *
  * @author clearlove3
  */
 public class LeetCode93 {
@@ -21,7 +22,7 @@ public class LeetCode93 {
     private void backTrack(String s, int startIndex, int pointNum) {
         if (pointNum == 3) {
             // 判断第四段⼦字符串是否合法，如果合法就放进result中
-            if (isValid(s,startIndex,s.length()-1)) {
+            if (isValid(s, startIndex, s.length() - 1)) {
                 result.add(s);
             }
             return;

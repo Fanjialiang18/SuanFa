@@ -5,7 +5,8 @@ import java.util.Stack;
 /**
  * 基本计算器2
  * 思路：
- *  使用一个数字栈，和一个用来保存上一个符号的变量即可
+ * 使用一个数字栈，和一个用来保存上一个符号的变量即可
+ *
  * @author clearlove3
  */
 public class LeetCode227 {
@@ -17,15 +18,15 @@ public class LeetCode227 {
         // 保存当前数字，如：12是两个字符，需要进位累加
         int num = 0;
         int result = 0;
-        for(int i = 0; i < s.length(); i++){
+        for (int i = 0; i < s.length(); i++) {
             char cur = s.charAt(i);
-            if(cur >= '0'){
+            if (cur >= '0') {
                 // 记录当前数字。先减，防溢出
-                num = num*10 - '0' + cur;
+                num = num * 10 - '0' + cur;
             }
-            if((cur < '0' && cur !=' ' )|| i == s.length()-1){
+            if ((cur < '0' && cur != ' ') || i == s.length() - 1) {
                 // 判断上一个符号是什么
-                switch(sign){
+                switch (sign) {
                     // 当前符号前的数字直接压栈
                     case '+':
                         numStack.push(num);
@@ -36,11 +37,11 @@ public class LeetCode227 {
                         break;
                     // 数字栈栈顶数字出栈，与当前符号前的数字相乘，结果值压栈
                     case '*':
-                        numStack.push(numStack.pop()*num);
+                        numStack.push(numStack.pop() * num);
                         break;
                     // 数字栈栈顶数字出栈，除于当前符号前的数字，结果值压栈
                     case '/':
-                        numStack.push(numStack.pop()/num);
+                        numStack.push(numStack.pop() / num);
                         break;
                     default:
                 }
@@ -51,7 +52,7 @@ public class LeetCode227 {
             }
         }
         // 将栈内剩余数字累加，即为结果
-        while(!numStack.isEmpty()){
+        while (!numStack.isEmpty()) {
             result += numStack.pop();
         }
         return result;

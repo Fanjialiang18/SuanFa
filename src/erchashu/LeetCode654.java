@@ -5,6 +5,7 @@ import day01.TreeNode;
 
 /**
  * 最大二叉树
+ *
  * @author clearlove3
  */
 public class LeetCode654 {
@@ -26,7 +27,7 @@ public class LeetCode654 {
         // 最大值
         int maxVal = nums[maxIndex];
         for (int i = leftIndex + 1; i < rightIndex; i++) {
-            if (nums[i] > maxVal){
+            if (nums[i] > maxVal) {
                 maxVal = nums[i];
                 maxIndex = i;
             }

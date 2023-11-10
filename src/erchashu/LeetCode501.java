@@ -3,12 +3,11 @@ package erchashu;
 import day01.TreeNode;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 /**
- *  二叉搜索树中的众数
- *  中序遍历，更新结果
+ * 二叉搜索树中的众数
+ * 中序遍历，更新结果
+ *
  * @author clearlove3
  */
 public class LeetCode501 {

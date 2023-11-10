@@ -7,14 +7,14 @@ import java.util.List;
  * 括号生成
  * 回溯，多看
  * 思路1：
- *  DFS+少量的剪枝
+ * DFS+少量的剪枝
  * 思路2：
- *  回溯
- *
+ * 回溯
  */
 public class LeetCode22 {
     List<String> res = new ArrayList<>();
-    StringBuilder ans=new StringBuilder();
+    StringBuilder ans = new StringBuilder();
+
     //思路1
     public List<String> generateParenthesis(int n) {
         dfs(n, n, "");
@@ -34,25 +34,26 @@ public class LeetCode22 {
             dfs(left, right - 1, curStr + ")");
         }
     }
+
     //思路2
     public List<String> generateParenthesis2(int n) {
         backTrack(n, n);
         return res;
     }
 
-    private void backTrack(int l,int r){
-        if(l==0&&r==0) {
+    private void backTrack(int l, int r) {
+        if (l == 0 && r == 0) {
             res.add(ans.toString());
         }
-        if(l!=0){
+        if (l != 0) {
             ans.append('(');
-            backTrack(l-1,r);
-            ans.deleteCharAt(ans.length()-1);
+            backTrack(l - 1, r);
+            ans.deleteCharAt(ans.length() - 1);
         }
-        if(r>l){
+        if (r > l) {
             ans.append(')');
-            backTrack(l,r-1);
-            ans.deleteCharAt(ans.length()-1);
+            backTrack(l, r - 1);
+            ans.deleteCharAt(ans.length() - 1);
         }
     }
 }

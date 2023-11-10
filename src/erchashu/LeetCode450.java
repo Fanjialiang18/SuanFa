@@ -4,18 +4,19 @@ import day01.TreeNode;
 
 /**
  * 删除二叉搜索树中的节点
+ *
  * @author clearlove3
  */
 public class LeetCode450 {
     public TreeNode deleteNode(TreeNode root, int key) {
         //没找到删除的节点，遍历到空节点直接返回了
-        if(root==null){
+        if (root == null) {
             return null;
         }
         if (root.val > key) {
-            root.left = deleteNode(root.left,key);
+            root.left = deleteNode(root.left, key);
         } else if (root.val < key) {
-            root.right = deleteNode(root.right,key);
+            root.right = deleteNode(root.right, key);
         } else {
             //其左孩子为空，右孩子不为空，删除节点，右孩子补位 ，返回右孩子为根节点
             if (root.left == null) {
@@ -31,7 +32,7 @@ public class LeetCode450 {
                 tmp = tmp.left;
             }
             root.val = tmp.val;
-            root.right = deleteNode(root.right,tmp.val);
+            root.right = deleteNode(root.right, tmp.val);
         }
         return root;
     }

@@ -26,7 +26,7 @@ public class LeetCode128 {
                 currentLongest += (num - current);
                 // 向当前元素的右边搜索,eg: 当前为100, 搜索：101，102，103,...
                 current = num;
-                while(numsSet.remove(current + 1)) {
+                while (numsSet.remove(current + 1)) {
                     current++;
                 }
                 currentLongest += (current - num);

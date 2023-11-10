@@ -1,11 +1,13 @@
 package m9d2;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * https://leetcode-cn.com/problems/permutation-i-lcci/
  * 无重复字符串的排列组合
  * dfs模板题，回溯，剪枝
+ *
  * @author clearlove3
  */
 public class Mian0807 {
@@ -40,9 +42,9 @@ public class Mian0807 {
     }*/
     private boolean[] used;
     /**
-     如果字符串有重复字母，最简单的去重是使用Set，也可以排序后下标剪枝（相对比较难）
-     重复字母的全排列可去做《全排列》系列题目。这道题好像和全排列I差不多。
-     接着要做的就是回溯模板啦，选了的跳过，每次选或不选即可爆搜到所有解。
+     * 如果字符串有重复字母，最简单的去重是使用Set，也可以排序后下标剪枝（相对比较难）
+     * 重复字母的全排列可去做《全排列》系列题目。这道题好像和全排列I差不多。
+     * 接着要做的就是回溯模板啦，选了的跳过，每次选或不选即可爆搜到所有解。
      */
     private List<String> res;
     private int len;

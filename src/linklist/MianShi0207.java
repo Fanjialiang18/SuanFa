@@ -4,6 +4,7 @@ import day01.ListNode;
 
 /**
  * 面试题 02.07. 链表相交
+ *
  * @author clearlove3
  */
 public class MianShi0207 {
@@ -24,15 +25,15 @@ public class MianShi0207 {
         curA = headA;
         curB = headB;
         //让curA和curB在同一起点上（末尾位置对齐）
-        if(lenA>=lenB){
+        if (lenA >= lenB) {
             int gap = lenA - lenB;
-            while (gap-->0){
-                curA=curA.next;
+            while (gap-- > 0) {
+                curA = curA.next;
             }
-        }else {
+        } else {
             int gap = lenB - lenA;
-            while (gap-->0){
-                curB=curB.next;
+            while (gap-- > 0) {
+                curB = curB.next;
             }
         }
         // 遍历curA 和 curB，遇到相同则直接返回

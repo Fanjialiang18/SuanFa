@@ -8,21 +8,23 @@ import java.util.List;
 /**
  * 二叉树的所有路径
  * 递归，回溯
+ *
  * @author clearlove3
  */
 public class LeetCode257 {
     public List<String> binaryTreePaths(TreeNode root) {
-        List<String> res=new ArrayList<>();
-        if(root==null){
+        List<String> res = new ArrayList<>();
+        if (root == null) {
             return res;
         }
-        List<Integer> paths=new ArrayList<>();
-        findPath(root,paths,res);
+        List<Integer> paths = new ArrayList<>();
+        findPath(root, paths, res);
         return res;
     }
-    private void findPath(TreeNode root,List<Integer> paths,List<String> res){
+
+    private void findPath(TreeNode root, List<Integer> paths, List<String> res) {
         paths.add(root.val);
-        if(root.left==null&&root.right==null){
+        if (root.left == null && root.right == null) {
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < paths.size() - 1; i++) {
                 sb.append(paths.get(i)).append("->");

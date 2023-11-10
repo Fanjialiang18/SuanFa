@@ -2,6 +2,7 @@ package zifuchuan;
 
 /**
  * 重复的子字符串
+ *
  * @author clearlove3
  */
 public class LeetCode459 {
@@ -15,8 +16,8 @@ public class LeetCode459 {
      * 由此我们可知字符串s=x，假定的子串就为s本身，判定为false。
      */
     public boolean repeatedSubstringPattern(String s) {
-        String ss=s+s;
-        ss=ss.substring(1,ss.length()-1);
+        String ss = s + s;
+        ss = ss.substring(1, ss.length() - 1);
         return ss.contains(s);
     }
 

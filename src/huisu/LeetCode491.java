@@ -5,20 +5,22 @@ import java.util.List;
 
 /**
  * 递增子序列
+ *
  * @author clearlove3
  */
 public class LeetCode491 {
-    List<List<Integer>> res=new ArrayList<>();
-    List<Integer> path=new ArrayList<>();
+    List<List<Integer>> res = new ArrayList<>();
+    List<Integer> path = new ArrayList<>();
+
     public List<List<Integer>> findSubsequences(int[] nums) {
-        if(nums.length<2){
+        if (nums.length < 2) {
             return res;
         }
-        helper(nums,0);
+        helper(nums, 0);
         return res;
     }
 
-    private void helper(int[] nums,int start){
+    private void helper(int[] nums, int start) {
         if (path.size() > 1) {
             res.add(new ArrayList<>(path));
         }

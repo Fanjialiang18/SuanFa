@@ -14,19 +14,19 @@ public class LeetCode470 {
 
         //或者构造出1-40的均匀分布
         int res;
-        while (true){
-            res=(rand7()-1)*7+rand7();
-            if(res<=40) {
+        while (true) {
+            res = (rand7() - 1) * 7 + rand7();
+            if (res <= 40) {
                 break;
             }
         }
         //然后构造出1-10的均匀分布
-        return res%10+1;
+        return res % 10 + 1;
 
 
     }
 
-    private int rand7(){
-        return (int) (Math.random()*7);
+    private int rand7() {
+        return (int) (Math.random() * 7);
     }
 }

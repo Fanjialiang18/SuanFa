@@ -9,22 +9,19 @@ package m8d24;
  */
 public class LeetCode41 {
     public int firstMissingPositive(int[] nums) {
-        for (int i = 0; i < nums.length; i++)
-        {
+        for (int i = 0; i < nums.length; i++) {
             //小心[1,1]出现死循环
             while (nums[i] < nums.length
                     && nums[i] > 0
                     && nums[i] != i + 1
                     && nums[i] != nums[nums[i] - 1]
-                    )
-            {//将nums[i]放到对应的位置上，交换位置
-                int temp = nums[nums[i]-1];
-                nums[nums[i]-1] = nums[i];
+            ) {//将nums[i]放到对应的位置上，交换位置
+                int temp = nums[nums[i] - 1];
+                nums[nums[i] - 1] = nums[i];
                 nums[i] = temp;
             }
         }
-        for (int i = 0; i < nums.length; i++)
-        {
+        for (int i = 0; i < nums.length; i++) {
             if (nums[i] != i + 1) {
                 return i + 1;
             }

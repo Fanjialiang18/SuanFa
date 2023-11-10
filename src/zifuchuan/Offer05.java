@@ -3,9 +3,10 @@ package zifuchuan;
 /**
  * 替换空格
  * 思路：
- *  遍历新建
+ * 遍历新建
  * 思路2：
- *  双指针，从后往前(Java不可用以为String不可变)
+ * 双指针，从后往前(Java不可用以为String不可变)
+ *
  * @author clearlove3
  */
 public class Offer05 {
@@ -34,12 +35,12 @@ public class Offer05 {
         }
         return s;
          */
-        if(s==null){
+        if (s == null) {
             return null;
         }
-        StringBuilder sb=new StringBuilder();
+        StringBuilder sb = new StringBuilder();
         for (int i = 0; i < s.length(); i++) {
-            if (" ".equals(String.valueOf(s.charAt(i)))){
+            if (" ".equals(String.valueOf(s.charAt(i)))) {
                 sb.append("%20");
             } else {
                 sb.append(s.charAt(i));

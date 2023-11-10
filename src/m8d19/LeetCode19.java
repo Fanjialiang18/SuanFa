@@ -10,21 +10,21 @@ import day01.ListNode;
  */
 public class LeetCode19 {
     public ListNode removeNthFromEnd(ListNode head, int n) {
-        ListNode dummy=new ListNode(-1);
-        dummy.next=head;
-        ListNode fast=dummy,slow=dummy;
+        ListNode dummy = new ListNode(-1);
+        dummy.next = head;
+        ListNode fast = dummy, slow = dummy;
         for (int i = 0; i < n; i++) {
-            fast=fast.next;
+            fast = fast.next;
         }
         //待删除节点的上一节点
-        ListNode pre=null;
-        while (fast!=null){
-            pre=slow;
-            fast=fast.next;
-            slow=slow.next;
+        ListNode pre = null;
+        while (fast != null) {
+            pre = slow;
+            fast = fast.next;
+            slow = slow.next;
         }
         //删除该节点
-        pre.next=slow.next;
+        pre.next = slow.next;
         return dummy.next;
     }
 }

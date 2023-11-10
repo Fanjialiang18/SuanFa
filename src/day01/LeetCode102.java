@@ -1,6 +1,9 @@
 package day01;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 
 public class LeetCode102 {
     /**
@@ -8,25 +11,25 @@ public class LeetCode102 {
      * 使用队列和LinkedList
      */
     public List<List<Integer>> levelOrder(TreeNode root) {
-        List<List<Integer>> lists=new LinkedList<>();// LinkedList优化每次从头进行添加
-        Queue<TreeNode> queue=new LinkedList<>();
-        if(root==null) {
+        List<List<Integer>> lists = new LinkedList<>();// LinkedList优化每次从头进行添加
+        Queue<TreeNode> queue = new LinkedList<>();
+        if (root == null) {
             return lists;
         }
         queue.add(root);
-        while(!queue.isEmpty()){
-            List<Integer> list=new ArrayList<>();
-            int i=0;//用i记录每层的节点数
-            for(TreeNode t:queue){
+        while (!queue.isEmpty()) {
+            List<Integer> list = new ArrayList<>();
+            int i = 0;//用i记录每层的节点数
+            for (TreeNode t : queue) {
                 list.add(t.val);
                 i++;
             }
-            while (!queue.isEmpty()){//添加下一层的节点
+            while (!queue.isEmpty()) {//添加下一层的节点
                 TreeNode poll = queue.poll();
-                if(poll.left!=null) {
+                if (poll.left != null) {
                     queue.add(poll.left);
                 }
-                if(poll.right!=null) {
+                if (poll.right != null) {
                     queue.add(poll.right);
                 }
                 i--;

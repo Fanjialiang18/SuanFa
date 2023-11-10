@@ -11,8 +11,9 @@ import java.util.List;
 public class LeetCode90 {
     List<List<Integer>> result = new ArrayList<>();
     LinkedList<Integer> path = new LinkedList<>();
+
     public List<List<Integer>> subsetsWithDup(int[] nums) {
-        if (nums.length == 0){
+        if (nums.length == 0) {
             result.add(path);
             return result;
         }
@@ -21,13 +22,13 @@ public class LeetCode90 {
         return result;
     }
 
-    private void subsetsWithDupHelper(int[] nums, int startIndex){
+    private void subsetsWithDupHelper(int[] nums, int startIndex) {
         result.add(new ArrayList<>(path));
-        if (startIndex >= nums.length){
+        if (startIndex >= nums.length) {
             return;
         }
-        for (int i = startIndex; i < nums.length; i++){
-            if (i > startIndex && nums[i] == nums[i - 1]){
+        for (int i = startIndex; i < nums.length; i++) {
+            if (i > startIndex && nums[i] == nums[i - 1]) {
                 continue;
             }
             path.add(nums[i]);
